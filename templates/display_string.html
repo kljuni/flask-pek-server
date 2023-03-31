@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display String</title>
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Saved String:</h1>
+    <p id="saved-string">{{ saved_string }}</p>
+    <p id="saved-date-and-time">{{ saved_date_and_time }}</p>
+    <script>
+      var socket = io();
+      socket.on('update', function(data) {
+        $('#saved-string').text(data.saved_string);
+        $('#saved-date-and-time').text(data.saved_date_and_time);
+      });
+    </script>
+  </body>
+</html>
