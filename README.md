@@ -7,4 +7,5 @@ To start the dev server:
 3. `python3 -m venv venv`
 4. `. venv/bin/activate`
 5. `pip install -r requirements.txt`
-6. `python -m flask run`
+6. `export FLASK_APP=run.py`
+7. `flask run`
